@@ -1,0 +1,77 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-o",
+                "${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Compiles the C++ program"
+        },
+        {
+            "label": "Run in a new terminal",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "start",
+                "cmd",
+                "/k",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Runs the C++ program in a new Command Prompt window"
+        },
+        {
+            "label": "run interactively after compile",
+            "dependsOn": [
+                "compile",
+                "Run in a new terminal"
+            ],
+            "dependsOrder": "sequence",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Compiles and runs the C++ program"
+        },
+        {
+            "label": "compile and run with file I/O",
+            "type": "shell",
+            "command": "cmd",
+            "args": [
+                "/c",
+                "g++ -std=c++17 -o ${fileBasenameNoExtension}.exe ${file} && ${fileBasenameNoExtension}.exe < input.txt > output.txt"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Compiles and runs the program with input/output redirection"
+        }
+    ]
+}

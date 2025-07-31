@@ -1,0 +1,12 @@
+[
+    {
+        "key": "ctrl+shift+i",
+        "command": "workbench.action.tasks.runTask",
+        "args": "run interactively after compile"
+    },
+    {
+        "key": "ctrl+shift+f",
+        "command": "workbench.action.tasks.runTask",
+        "args": "compile and run with file I/O"
+    }
+]

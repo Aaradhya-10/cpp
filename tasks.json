@@ -1,0 +1,73 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "compile",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-o",
+                "${fileBasenameNoExtension}",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Compiles the C++ program"
+        },
+        {
+            "label": "Run in a new terminal",
+            "type": "shell",
+            "command": "open",
+            "args": [
+                "-a",
+                "Terminal",
+                "${fileDirname}/${fileBasenameNoExtension}"
+            ],
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "group": {
+                "kind": "test",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Runs the C++ program in a new terminal"
+
+        },
+        {
+            "label": "run interactively after compile",
+            "dependsOn":[
+                "compile",
+                "Run in a new terminal",
+            ],
+            "dependsOrder": "sequence",
+            "presentation": {
+                "reveal": "always",
+                "panel": "shared"
+            },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": [],
+            "detail": "Runs the C++ program in a new terminal after building it"
+        },
+
+        {
+            "label": "compile and run with file I/O",
+            "type": "shell",
+            "command": "g++ -std=c++17 -o ${fileBasenameNoExtension} ${file} && ./${fileBasenameNoExtension} < input.txt > output.txt",
+            "group": {
+                "kind": "build",
+                "isDefault": false
+            },
+            "problemMatcher": [],
+            "detail": "Compiles and runs the program with input/output redirection"
+        }
+    ]
+}
