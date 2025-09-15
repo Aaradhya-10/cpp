@@ -46,10 +46,7 @@ using namespace std;
 int main() {messi lld t=1;cin>>t;
     while(t--){
         lld n=0,m=0,k=0,i=0,j=0,p=0,q=0,x=0,y=0,z=0,ans=0,cnt=0,l=0,r=0,mid=0,lo=0,hi=0,lm=0,cur=0,curr=0;string s;bool flag=false;
-        string str; 
-        cin >> str;
-        string ne = str.substr(2);
-        cout << ne << endl;
+        // cin >> n;
     }
 	return 0;
 }
