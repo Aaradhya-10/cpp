@@ -8,7 +8,7 @@
             "args": [
                 "-std=c++17",
                 "-o",
-                "${fileBasenameNoExtension}.exe",
+                "${fileBasenameNoExtension}",
                 "${file}"
             ],
             "group": {
@@ -21,13 +21,11 @@
         {
             "label": "Run in a new terminal",
             "type": "shell",
-            "command": "cmd",
+            "command": "open",
             "args": [
-                "/c",
-                "start",
-                "cmd",
-                "/k",
-                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+                "-a",
+                "Terminal",
+                "${fileDirname}/${fileBasenameNoExtension}"
             ],
             "presentation": {
                 "reveal": "always",
@@ -38,11 +36,12 @@
                 "isDefault": true
             },
             "problemMatcher": [],
-            "detail": "Runs the C++ program in a new Command Prompt window"
+            "detail": "Runs the C++ program in a new terminal"
+
         },
         {
             "label": "run interactively after compile",
-            "dependsOn": [
+            "dependsOn":[
                 "compile",
                 "Run in a new terminal"
             ],
@@ -53,19 +52,16 @@
             },
             "group": {
                 "kind": "build",
-                "isDefault": false
+                "isDefault": true
             },
             "problemMatcher": [],
-            "detail": "Compiles and runs the C++ program"
+            "detail": "Runs the C++ program in a new terminal after building it"
         },
+
         {
             "label": "compile and run with file I/O",
             "type": "shell",
-            "command": "cmd",
-            "args": [
-                "/c",
-                "g++ -std=c++17 -o ${fileBasenameNoExtension}.exe ${file} && ${fileBasenameNoExtension}.exe < input.txt > output.txt"
-            ],
+            "command": "g++ -std=c++17 -o ${fileBasenameNoExtension} ${file} && ./${fileBasenameNoExtension} < input.txt > output.txt",
             "group": {
                 "kind": "build",
                 "isDefault": false

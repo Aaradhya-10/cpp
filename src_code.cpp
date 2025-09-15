@@ -43,10 +43,13 @@
 #define INF 5000000000000000000
 #define messi ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 using namespace std;
-int main() {messi lld t=1;//cin>>t;
+int main() {messi lld t=1;cin>>t;
     while(t--){
         lld n=0,m=0,k=0,i=0,j=0,p=0,q=0,x=0,y=0,z=0,ans=0,cnt=0,l=0,r=0,mid=0,lo=0,hi=0,lm=0,cur=0,curr=0;string s;bool flag=false;
-        cin>>n; cout << n*n << endl;
+        string str; 
+        cin >> str;
+        string ne = str.substr(2);
+        cout << ne << endl;
     }
 	return 0;
 }
