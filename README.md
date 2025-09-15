@@ -8,7 +8,8 @@
 
 1. **Create a directory in vscode**.  
 
-2. **Cmd + shift + p : configure tasks : g++**.    *--> this will create the .vscode folder*   
+2. **Cmd + shift + p : configure tasks : g++**.    
+> *--> this will create the .vscode folder*   
 
 3. **after the .vscode folder is created, replace its tasks.json with the one's present here based on the OS**.  
 
