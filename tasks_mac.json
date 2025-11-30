@@ -8,7 +8,7 @@
             "args": [
                 "-std=c++17",
                 "-o",
-                "${fileBasenameNoExtension}",
+                "${fileDirname}/${fileBasenameNoExtension}",
                 "${file}"
             ],
             "group": {
